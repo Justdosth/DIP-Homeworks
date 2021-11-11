@@ -8,11 +8,16 @@ resized_128 = myImage.resize((128, 128))
 resized_128.save('First/foxy_128.png')
 #4
 resized_128_array = np.array(resized_128)
+
 for i, lst in enumerate(resized_128_array):
     for j, item  in enumerate(lst):
-        resized_128_array[i][j] = item//17
+        k = format(item,'08b')
+        n = k[:4]
+        m = int(n, 2)
+        resized_128_array[i][j] = m
         
-image_4bit = Image.fromarray(resized_128_array)
+resized_128_array_4bit = resized_128_array*17
+image_4bit = Image.fromarray(resized_128_array_4bit)
 image_4bit.save('First/foxy_4bit.png')
 #2
 resized_32 = myImage.resize((32, 32))
