@@ -86,7 +86,7 @@ print(f'This is a hidden text: {backward_text}')
 
 #4
 quarter = my_image_array_s.shape[0]//2
-
+print(my_image_array_s.shape)
 for i, lst in enumerate(my_image_array_s[:quarter]):
     for j, item in enumerate(lst[:quarter]):
         k = format(item,'08b')
