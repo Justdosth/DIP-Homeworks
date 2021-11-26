@@ -56,6 +56,10 @@ entropy_original = entropy(myImage_array_original)
 entropy_shrinked = entropy(myImage_array_sh)
 entropy_stretched = entropy(myImage_array)
 entropy_equilized = entropy(equ)
+print(f'entropy of original image is {entropy_original}')
+print(f'entropy of shrinked image is {entropy_shrinked}')
+print(f'entropy of stretched image is {entropy_stretched}')
+print(f'entropy of equilized image is {entropy_equilized}')
 
 #ه
 shrinked = cv2.imread("Third/anime_shrink.jpg",0)
@@ -74,9 +78,14 @@ plt.title('B')
 plt.subplot(1,3,3)
 plt.imshow(C)
 plt.title('C')
-plt.show()
+
 
 #و
 entropy_A = entropy(A)
 entropy_B = entropy(B)
 entropy_C = entropy(C)
+print(f'entropy of A image is {entropy_A}')
+print(f'entropy of B image is {entropy_B}')
+print(f'entropy of C image is {entropy_C}')
+
+plt.show()
