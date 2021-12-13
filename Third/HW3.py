@@ -3,13 +3,13 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-myImage = Image.open('Third/anime.jpg').convert('L')
+myImage = Image.open('anime.jpg').convert('L')
 myImage = myImage.resize((256, 256))
 myImage.save('Third/anime_gry.jpg')
 myImage_array_original = np.array(myImage)
 myImage_array = myImage_array_original.copy()
 
-#الف
+#alef
 for i, lst in enumerate(myImage_array):
     for j, item  in enumerate(lst):
         shrinked_value = round(
@@ -27,7 +27,7 @@ myImage_array_sh = myImage_array.copy()
 image_shrinked = Image.fromarray(myImage_array)
 image_shrinked.save('Third/anime_shrink.jpg')
 
-#ب
+#be
 for i, lst in enumerate(myImage_array):
     for j, item  in enumerate(lst):
         stretched_value = round(
@@ -38,12 +38,12 @@ for i, lst in enumerate(myImage_array):
 image_stretched = Image.fromarray(myImage_array)
 image_stretched.save('Third/anime_stretch.jpg')
 
-#ج
+#je
 img = cv2.imread('Third/anime_shrink.jpg',0)
 equ = cv2.equalizeHist(img)
 cv2.imwrite('Third/anime_equilized.jpg', equ)
 
-#د
+#de
 def entropy(im):
     # Compute normalized histogram -> p(g)
     p = np.array([(im==v).sum() for v in range(256)])
@@ -61,7 +61,7 @@ print(f'entropy of shrinked image is {entropy_shrinked}')
 print(f'entropy of stretched image is {entropy_stretched}')
 print(f'entropy of equilized image is {entropy_equilized}')
 
-#ه
+#he
 shrinked = cv2.imread("Third/anime_shrink.jpg",0)
 stretched = cv2.imread("Third/anime_stretch.jpg",0)
 equilized = cv2.imread("Third/anime_equilized.jpg",0)
@@ -80,7 +80,7 @@ plt.imshow(C)
 plt.title('C')
 
 
-#و
+#ve
 entropy_A = entropy(A)
 entropy_B = entropy(B)
 entropy_C = entropy(C)
